@@ -1,0 +1,17 @@
+{
+  "name": "tcc-api",
+  "version": "0.0.1",
+  "description": "ExpressJS REST API TCC",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index"
+  },
+  "author": "gabriel.scossi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.6.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {}
+}
