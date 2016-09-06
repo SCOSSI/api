@@ -32,7 +32,12 @@ exports.addSampleOne = function (req, res) {
     logger.log('info', 'addSampleOne called!');
     console.log(JSON.stringify(req.body));
     sampleOne.create(req.body, function (err, resp) {
-        if (err) console.log(JSON.stringify(err));
+        if (err){
+            console.log("erro");
+            console.log(JSON.stringify(err.value));
+            console.log(JSON.stringify(err));
+            console.log(err.value);
+        }
         res.json(resp);
     });
 
