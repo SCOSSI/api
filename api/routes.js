@@ -32,7 +32,7 @@ exports.addSampleOne = function (req, res) {
     logger.log('info', 'addSampleOne called!');
     console.log(JSON.stringify(req.body));
     sampleOne.create(req.body, function (err, resp) {
-        if (err) console.log('Error saving addSampleOne');
+        if (err) console.log(JSON.stringify(err));
         res.json(resp);
     });
 
