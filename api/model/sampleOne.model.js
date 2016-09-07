@@ -9,7 +9,7 @@ var Schema = mongoose.Schema;
 
 //create recipe schema
 var sampleOneSchema = new Schema({
-    "_id":Number,
+    
     "place":String,
     "placeOther":String,
     "doing":String,

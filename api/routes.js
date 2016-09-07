@@ -29,9 +29,32 @@ exports.addUserGeolocation = function (req, res) {
 }
 
 exports.addSampleOne = function (req, res) {
+    var sample = new sampleOne({
+        place : req.place,
+        placeOther: req.placeOther,
+        doing: req.doing,
+        isWorkingWithSomeone: req.isWorkingWithSomeone,
+        isWorkingWith: req.isWorkingWith,
+        isWorkingWithSomeoneOther: req.isWorkingWithSomeoneOther,
+        feeling: req.feeling,
+        feelingPositive: req.feelingPositive,
+        feelingNegative: req.feelingNegative,
+        date: req.date,
+        longitude: req.longitude,
+        latitude: req.latitude,
+        userEmail: req.userEmail
+    });
     logger.log('info', 'addSampleOne called!');
-    console.log(JSON.stringify(req.body));
-    sampleOne.create(req.body, function (err, resp) {
+    console.log(JSON.stringify(sample));
+    sample.save(function (err){
+        if(!err){
+            return console.log("created");
+        }else{
+            return console.log(JSON.stringify(err));
+        }
+    });
+    return res.send(sample);
+    /*sampleOne.create(req.body, function (err, resp) {
         if (err){
             console.log("erro");
             console.log(JSON.stringify(err.value));
@@ -39,7 +62,8 @@ exports.addSampleOne = function (req, res) {
             console.log(err.value);
         }
         res.json(resp);
-    });
+    });*/
+    
 
 }
 
