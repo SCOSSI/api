@@ -135,7 +135,7 @@ exports.addSampleThree = function (req, res) {
 exports.addUser = function (req, res) {
     
     logger.log('info', 'addUser called!');
-    Model.findOne({email: req.body.email}, function (err, result) {
+    user.findOne({email: req.body.email}, function (err, result) {
         if (err) {
             console.log(err);
         }
