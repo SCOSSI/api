@@ -157,6 +157,8 @@ exports.addUser = function (req, res) {
                 }
             });
             return res.send(userToSave);
+        }else{
+            return res.send();
         }
     });
 }
