@@ -54,15 +54,7 @@ exports.addSampleOne = function (req, res) {
         }
     });
     return res.send(sample);
-    /*sampleOne.create(req.body, function (err, resp) {
-        if (err){
-            console.log("erro");
-            console.log(JSON.stringify(err.value));
-            console.log(JSON.stringify(err));
-            console.log(err.value);
-        }
-        res.json(resp);
-    });*/
+   
 
 
 }
