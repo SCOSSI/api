@@ -10,10 +10,8 @@ var Schema = mongoose.Schema;
 
 //create recipe schema
 var userSchema = new Schema({
-    "_id":Number,
     "name":String,
     "email":String,
-    "token":String,
     "date":[Date]
 });
 //export schema

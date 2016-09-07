@@ -19,7 +19,27 @@ exports.welcomeAPI = function (req, res) {
     res.json({message: 'Welcome to Recipe API!'});
 }
 
+
 exports.addUserGeolocation = function (req, res) {
+
+    var userGeo = new userGeolocation({
+        userEmail : req.body.userEmail,
+        longitude: req.body.longitude,
+        latitude: req.body.latitude,
+        date: req.body.date
+    });
+    logger.log('info', 'addUserGeolocation called!');
+    userGeo.save(function (err){
+        if(!err){
+            return console.log("created");
+        }else{
+            return console.log(err);
+        }
+    });
+    return res.send(userGeo);
+
+
+
     logger.log('info', 'addUserGeolocation called!');
     userGeolocation.create(req.body, function (err, resp) {
         if (err) console.log('Error saving addUserGeolocation');
@@ -45,7 +65,6 @@ exports.addSampleOne = function (req, res) {
         userEmail: req.body.userEmail
     });
     logger.log('info', 'addSampleOne called!');
-    console.log(sample);
     sample.save(function (err){
         if(!err){
             return console.log("created");
@@ -60,36 +79,84 @@ exports.addSampleOne = function (req, res) {
 }
 
 exports.addSampleTwo = function (req, res) {
-    logger.log('info', 'addSampleTwo called!');
-    sampleTwo.create(req.body, function (err, resp) {
-        if (err) console.log('Error saving addSampleTwo');
-        res.json(resp);
-    });
 
+    var sample = new sampleTwo({
+        didLookForInformation : req.body.didLookForInformation,
+        informationSearched: req.body.informationSearched,
+        findWhatNeeded: req.body.findWhatNeeded,
+        placeFoundInformation: req.body.placeFoundInformation,
+        personWhoGaveInformation: req.body.personWhoGaveInformation,
+        isWorkingWithSomeoneOther: req.body.isWorkingWithSomeoneOther,
+        communicationToolUsed: req.body.communicationToolUsed,
+        communicationToolUsedOther: req.body.communicationToolUsedOther,
+        date: req.body.date,
+        longitude: req.body.longitude,
+        latitude: req.body.latitude,
+        userEmail: req.body.userEmail
+    });
+    logger.log('info', 'addSampleTwo called!');
+    sample.save(function (err){
+        if(!err){
+            return console.log("created");
+        }else{
+            return console.log(err);
+        }
+    });
+    return res.send(sample);
+    
 }
 
 exports.addSampleThree = function (req, res) {
-    logger.log('info', 'addSampleThree called!');
-    sampleThree.create(req.body, function (err, resp) {
-        if (err) console.log('Error saving addSampleThree');
-        res.json(resp);
+
+    var sample = new sampleThree({
+        sharedInformation : req.body.sharedInformation,
+        whoWithSharedInformation: req.body.whoWithSharedInformation,
+        informationPersonNeeded: req.body.informationPersonNeeded,
+        communicationToolUsed: req.body.communicationToolUsed,
+        communicationToolUsedOther: req.body.communicationToolUsedOther,
+        date: req.body.date,
+        longitude: req.body.longitude,
+        latitude: req.body.latitude,
+        userEmail: req.body.userEmail
     });
+    logger.log('info', 'addSampleThree called!');
+    sample.save(function (err){
+        if(!err){
+            return console.log("created");
+        }else{
+            return console.log(err);
+        }
+    });
+    return res.send(sample);
 
 }
 
 
 exports.addUser = function (req, res) {
+    
     logger.log('info', 'addUser called!');
     Model.findOne({email: req.body.email}, function (err, result) {
         if (err) {
-            console.log(JSON.stringify(err))
+            console.log(err);
         }
         if (!result) {
             console.log("did not found user")
-            user.create(req.body, function (err, resp) {
-                if (err) console.log('Error saving addUser');
-                res.json(resp);
+
+
+            var userToSave = new user({
+                name : req.body.name,
+                email: req.body.email,
+                date: req.body.date
             });
+            logger.log('info', 'addUser called!');
+            userToSave.save(function (err){
+                if(!err){
+                    return console.log("created");
+                }else{
+                    return console.log(err);
+                }
+            });
+            return res.send(userToSave);
         }
     });
 }

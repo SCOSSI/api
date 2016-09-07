@@ -11,7 +11,6 @@ var Schema = mongoose.Schema;
 
 //create recipe schema
 var userGeolocationSchema = new Schema({
-    "_id":Number,
     "date":[Date],
     "longitude":String,
     "latitude":String,

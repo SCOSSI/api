@@ -10,12 +10,9 @@ var Schema = mongoose.Schema;
 
 //create recipe schema
 var sampleThreeSchema = new Schema({
-    "_id":Number,
     "sharedInformation":String,
     "whoWithSharedInformation":String,
     "informationPersonNeeded":String,
-    "communicationToolUsed":String,
-    "personWhoGaveInformation":String,
     "communicationToolUsed":String,
     "communicationToolUsedOther":String,
     "date":[Date],

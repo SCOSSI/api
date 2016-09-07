@@ -10,7 +10,6 @@ var Schema = mongoose.Schema;
 
 //create recipe schema
 var sampleTwoSchema = new Schema({
-    "_id":Number,
     "didLookForInformation":String,
     "informationSearched":String,
     "findWhatNeeded":String,
