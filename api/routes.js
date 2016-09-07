@@ -30,22 +30,22 @@ exports.addUserGeolocation = function (req, res) {
 
 exports.addSampleOne = function (req, res) {
     var sample = new sampleOne({
-        place : req.place,
-        placeOther: req.placeOther,
-        doing: req.doing,
-        isWorkingWithSomeone: req.isWorkingWithSomeone,
-        isWorkingWith: req.isWorkingWith,
-        isWorkingWithSomeoneOther: req.isWorkingWithSomeoneOther,
-        feeling: req.feeling,
-        feelingPositive: req.feelingPositive,
-        feelingNegative: req.feelingNegative,
-        date: req.date,
-        longitude: req.longitude,
-        latitude: req.latitude,
-        userEmail: req.userEmail
+        place : req.body.place,
+        placeOther: req.body.placeOther,
+        doing: req.body.doing,
+        isWorkingWithSomeone: req.body.isWorkingWithSomeone,
+        isWorkingWith: req.body.isWorkingWith,
+        isWorkingWithSomeoneOther: req.body.isWorkingWithSomeoneOther,
+        feeling: req.body.feeling,
+        feelingPositive: req.body.feelingPositive,
+        feelingNegative: req.body.feelingNegative,
+        date: req.body.date,
+        longitude: req.body.longitude,
+        latitude: req.body.latitude,
+        userEmail: req.body.userEmail
     });
     logger.log('info', 'addSampleOne called!');
-    console.log(req);
+    console.log(sample);
     sample.save(function (err){
         if(!err){
             return console.log("created");
@@ -54,7 +54,7 @@ exports.addSampleOne = function (req, res) {
         }
     });
     return res.send(sample);
-   
+
 
 
 }
