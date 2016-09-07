@@ -45,7 +45,7 @@ exports.addSampleOne = function (req, res) {
         userEmail: req.userEmail
     });
     logger.log('info', 'addSampleOne called!');
-    console.log(JSON.stringify(sample));
+    console.log(JSON.stringify(req));
     sample.save(function (err){
         if(!err){
             return console.log("created");
@@ -63,7 +63,7 @@ exports.addSampleOne = function (req, res) {
         }
         res.json(resp);
     });*/
-    
+
 
 }
 
