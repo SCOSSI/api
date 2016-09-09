@@ -7,6 +7,7 @@ var user = require('./model/user.model');
 var sampleOne = require('./model/sampleOne.model');
 var sampleTwo = require('./model/sampleTwo.model');
 var sampleThree = require('./model/sampleThree.model');
+var problem = require('./model/problem.model');
 var logger = require(__dirname + '/../utils/logger');
 
 /**
@@ -19,6 +20,29 @@ exports.welcomeAPI = function (req, res) {
     res.json({message: 'Welcome to Recipe API!'});
 }
 
+exports.addProblem = function (req, res) {
+    var problemToSave = new problem({
+        place : req.body.place,
+        placeOther: req.body.placeOther,
+        problem: req.body.problem,
+        problemOther: req.body.problemOther,
+        detail: req.body.detail,
+        date: req.body.date,
+        longitude: req.body.longitude,
+        latitude: req.body.latitude,
+        userEmail: req.body.userEmail
+    });
+    logger.log('info', 'addProblem called!');
+    problemToSave.save(function (err){
+        if(!err){
+            return console.log("created");
+        }else{
+            return console.log(err);
+        }
+    });
+    return res.send(problemToSave);
+
+}
 
 exports.addUserGeolocation = function (req, res) {
 
