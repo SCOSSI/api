@@ -20,4 +20,4 @@ var problemSchema = new Schema({
     "userEmail":String
 });
 //export schema
-module.exports = mongoose.model('problem', userGeolocationSchema);
+module.exports = mongoose.model('problem', problemSchema);
