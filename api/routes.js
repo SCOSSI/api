@@ -11,11 +11,7 @@ var problem = require('./model/problem.model');
 var loc = require('./model/userGeolocation.model');
 var logger = require(__dirname + '/../utils/logger');
 
-/**
- * welcomeAPI()
- * @Request GET
- * Root API route message
- */
+
 exports.welcomeAPI = function (req, res) {
     logger.log('info', 'Recipe API called!');
     res.json({message: 'Welcome to Recipe API!'});
