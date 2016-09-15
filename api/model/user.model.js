@@ -12,7 +12,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
     "name":String,
     "email":String,
-    "date":[Date]
+    "date":{ type: Date, default: Date.now }
 });
 //export schema
 module.exports = mongoose.model('user', userSchema);

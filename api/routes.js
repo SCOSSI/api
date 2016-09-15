@@ -8,6 +8,7 @@ var sampleOne = require('./model/sampleOne.model');
 var sampleTwo = require('./model/sampleTwo.model');
 var sampleThree = require('./model/sampleThree.model');
 var problem = require('./model/problem.model');
+var loc = require('./model/userGeolocation.model');
 var logger = require(__dirname + '/../utils/logger');
 
 /**
@@ -21,6 +22,10 @@ exports.welcomeAPI = function (req, res) {
 }
 
 exports.addProblem = function (req, res) {
+    var locToAdd = new loc({
+        name: req.body.place,
+        location: [req.body.longitude, req.body.latitude]
+    });
     var problemToSave = new problem({
         place : req.body.place,
         placeOther: req.body.placeOther,
@@ -28,8 +33,7 @@ exports.addProblem = function (req, res) {
         problemOther: req.body.problemOther,
         detail: req.body.detail,
         date: req.body.date,
-        longitude: req.body.longitude,
-        latitude: req.body.latitude,
+        loc: locToAdd,
         userEmail: req.body.userEmail
     });
     logger.log('info', 'addProblem called!');
