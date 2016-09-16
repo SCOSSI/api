@@ -197,7 +197,7 @@ exports.getProblemsNearOneKm = function (req, res) {
                     },
                     distanceField: "distance",
                     spherical:  true,
-                    maxDistance:  1000
+                    maxDistance:  10000
                 }
             }
         ],
