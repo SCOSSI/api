@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="41334e1c-83cc-48fe-9c52-92059442de86" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/model/location.model.js" afterPath="$PROJECT_DIR$/api/model/location.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/model/problem.model.js" afterPath="$PROJECT_DIR$/api/model/problem.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/model/sampleOne.model.js" afterPath="$PROJECT_DIR$/api/model/sampleOne.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/model/sampleThree.model.js" afterPath="$PROJECT_DIR$/api/model/sampleThree.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/model/sampleTwo.model.js" afterPath="$PROJECT_DIR$/api/model/sampleTwo.model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/model/userGeolocation.model.js" afterPath="$PROJECT_DIR$/api/model/userGeolocation.model.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/routes.js" afterPath="$PROJECT_DIR$/api/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
     </list>
     <ignored path="mobile_workers_api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,8 +57,8 @@
       <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="185" column="28" selection-start-line="185" selection-start-column="8" selection-end-line="185" selection-end-column="28" />
+            <state relative-caret-position="776">
+              <caret line="198" column="17" selection-start-line="198" selection-start-column="17" selection-end-line="198" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -162,8 +155,8 @@
         <option value="$PROJECT_DIR$/api/model/userGeolocation.model.js" />
         <option value="$PROJECT_DIR$/api/model/location.model.js" />
         <option value="$PROJECT_DIR$/api/model/problem.model.js" />
-        <option value="$PROJECT_DIR$/api/routes.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/api/routes.js" />
       </list>
     </option>
   </component>
@@ -367,7 +360,7 @@
       <workItem from="1473128801669" duration="12619000" />
       <workItem from="1473378897915" duration="2750000" />
       <workItem from="1473720297259" duration="597000" />
-      <workItem from="1473977083792" duration="7908000" />
+      <workItem from="1473977083792" duration="8296000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1472776551715</created>
@@ -684,11 +677,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473985742953</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary=".">
+      <created>1473988524657</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1473988524657</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44855000" />
+    <option name="totallyTimeSpent" value="45243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1272" y="-8" width="1936" height="1096" extended-state="6" />
@@ -1099,8 +1099,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="185" column="28" selection-start-line="185" selection-start-column="8" selection-end-line="185" selection-end-column="28" />
+        <state relative-caret-position="776">
+          <caret line="198" column="17" selection-start-line="198" selection-start-column="17" selection-end-line="198" selection-end-column="17" />
           <folding />
         </state>
       </provider>
