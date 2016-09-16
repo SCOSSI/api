@@ -189,7 +189,7 @@ exports.getProblemsNearOneKm = function (req, res) {
         [
             {
                 $geoNear: {
-                    near: { type: "Point", coordinates: [ -73.99279 , 40.719296 ] },
+                    near: { type: "Point", coordinates: [req.query.longitude , req.query.latitude] },
                     distanceField: "dist.calculated",
                     maxDistance: 2,
                     query: { type: "public" },
