@@ -20,7 +20,7 @@ exports.welcomeAPI = function (req, res) {
 exports.addProblem = function (req, res) {
     var locToAdd = new loc({
         name: req.body.place,
-        location: [req.body.longitude, req.body.latitude]
+        location: {coordinates : [req.body.longitude, req.body.latitude]}
     });
     var problemToSave = new problem({
         place : req.body.place,
