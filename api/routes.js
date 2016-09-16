@@ -185,17 +185,17 @@ exports.addUser = function (req, res) {
 
 exports.getProblemsNearOneKm = function (req, res) {
     console.log(req.query);
-    /*problem.aggregate(
+    problem.aggregate(
         [
             {
-                "$geoNear": {
-                    "near": {
-                        "type": "Point",
-                        "coordinates": [ req.query.longitude , req.query.latitude]
-                    },
-                    "distanceField": "distance",
-                    "spherical":  true,
-                    "maxDistance":  10000
+                $geoNear: {
+                    near: { type: "Point", coordinates: [ -73.99279 , 40.719296 ] },
+                    distanceField: "dist.calculated",
+                    maxDistance: 2,
+                    query: { type: "public" },
+                    includeLocs: "dist.location",
+                    num: 5,
+                    spherical: true
                 }
             }
         ],
@@ -207,20 +207,8 @@ exports.getProblemsNearOneKm = function (req, res) {
             res.send(results);
         }
 
-    )*/
-    problem.aggregate([
-        {
-            $geoNear: {
-                near: { type: "Point", coordinates: [ -73.99279 , 40.719296 ] },
-                distanceField: "dist.calculated",
-                maxDistance: 2,
-                query: { type: "public" },
-                includeLocs: "dist.location",
-                num: 5,
-                spherical: true
-            }
-        }
-    ])
+    )
+
 
 }
 
