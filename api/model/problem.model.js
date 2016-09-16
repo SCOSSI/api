@@ -15,6 +15,7 @@ var problemSchema = new Schema({
     "problem" : String,
     "problemOther" : String,
     "detail" : String,
+    "solution": String,
     "date":{ type: Date, default: Date.now },
     "loc": [loc],
     "userEmail":String
