@@ -29,7 +29,7 @@ exports.addProblem = function (req, res) {
         problemOther: req.body.problemOther,
         detail: req.body.detail,
         date: req.body.date,
-        loc: [locToAdd],
+        loc: locToAdd,
         userEmail: req.body.userEmail
     });
     logger.log('info', 'addProblem called!');
