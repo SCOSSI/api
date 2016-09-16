@@ -185,7 +185,7 @@ exports.addUser = function (req, res) {
 
 exports.getProblemsNearOneKm = function (req, res) {
     console.log(req.query);
-    db.problem.aggregate(
+    problem.aggregate(
         [
             {
                 "$geoNear": {
