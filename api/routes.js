@@ -191,7 +191,7 @@ exports.getProblemsNearOneKm = function (req, res) {
                 "$geoNear": {
                     "near": {
                         "type": "Point",
-                        "coordinates": [ req.query.longitude , req.query.latitude]
+                        "loc": [ req.query.longitude , req.query.latitude]
                     },
                     "distanceField": "distance",
                     "sperical":  true,
