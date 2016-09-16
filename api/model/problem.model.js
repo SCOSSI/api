@@ -20,5 +20,7 @@ var problemSchema = new Schema({
     "loc": [loc],
     "userEmail":String
 });
+
 //export schema
 module.exports = mongoose.model('problem', problemSchema);
+

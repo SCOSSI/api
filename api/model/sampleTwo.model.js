@@ -4,7 +4,7 @@
 
 //require mongoose module
 var mongoose = require('mongoose');
-
+var loc = require('./location.model').schema;
 //instantiate mongoose schema
 var Schema = mongoose.Schema;
 
@@ -17,9 +17,8 @@ var sampleTwoSchema = new Schema({
     "personWhoGaveInformation":String,
     "communicationToolUsed":String,
     "communicationToolUsedOther":String,
-    "date":[Date],
-    "longitude":String,
-    "latitude":String,
+    "date":{ type: Date, default: Date.now },
+    "loc": [loc],
     "userEmail":String
 });
 //export schema

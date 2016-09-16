@@ -3,6 +3,7 @@
  */
 //require mongoose module
 var mongoose = require('mongoose');
+var loc = require('./location.model').schema;
 
 //instantiate mongoose schema
 var Schema = mongoose.Schema;
@@ -19,9 +20,8 @@ var sampleOneSchema = new Schema({
     "feeling":String,
     "feelingPositive":String,
     "feelingNegative":String,
-    "date":[Date],
-    "longitude":String,
-    "latitude":String,
+    "date":{ type: Date, default: Date.now },
+    "loc": [loc],
     "userEmail":String
 });
 //export schema

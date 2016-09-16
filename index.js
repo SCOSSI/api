@@ -52,7 +52,7 @@ router.post('/api/addSampleTwo', routes.addSampleTwo);//create a new recipe type
 router.post('/api/addSampleThree', routes.addSampleThree);//create a new recipe type (POST)
 router.post('/api/addUser', routes.addUser);//create a new recipe type (POST)
 router.post('/api/problem', routes.addProblem);//create a new recipe type (POST)
-router.post('/api/test', routes.test);
+router.get('/api/getProblemsNearOneKm', routes.getProblemsNearOneKm);
 
 
 app.use('/', router);

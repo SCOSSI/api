@@ -18,7 +18,6 @@ var LocationSchema = new mongoose.Schema({
     creationDate: { type: Date, default: Date.now },
     name: String
 });
-
 LocationSchema.index({ location : '2dsphere' });
 //export schema
 module.exports = mongoose.model('location', LocationSchema);

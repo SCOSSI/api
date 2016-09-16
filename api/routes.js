@@ -20,23 +20,22 @@ exports.welcomeAPI = function (req, res) {
 exports.addProblem = function (req, res) {
     var locToAdd = new loc({
         name: req.body.place,
-        location: {coordinates : [req.body.longitude, req.body.latitude]}
+        location: {coordinates: [req.body.longitude, req.body.latitude]}
     });
     var problemToSave = new problem({
-        place : req.body.place,
+        place: req.body.place,
         placeOther: req.body.placeOther,
         problem: req.body.problem,
         problemOther: req.body.problemOther,
         detail: req.body.detail,
-        date: req.body.date,
         loc: locToAdd,
         userEmail: req.body.userEmail
     });
     logger.log('info', 'addProblem called!');
-    problemToSave.save(function (err){
-        if(!err){
+    problemToSave.save(function (err) {
+        if (!err) {
             return console.log("created");
-        }else{
+        } else {
             return console.log(err);
         }
     });
@@ -45,36 +44,33 @@ exports.addProblem = function (req, res) {
 }
 
 exports.addUserGeolocation = function (req, res) {
-
+    var locToAdd = new loc({
+        name: req.body.place,
+        location: {coordinates: [req.body.longitude, req.body.latitude]}
+    });
     var userGeo = new userGeolocation({
-        userEmail : req.body.userEmail,
-        longitude: req.body.longitude,
-        latitude: req.body.latitude,
-        date: req.body.date
+        userEmail: req.body.userEmail,
+        loc: locToAdd
     });
     logger.log('info', 'addUserGeolocation called!');
-    userGeo.save(function (err){
-        if(!err){
+    userGeo.save(function (err) {
+        if (!err) {
             return console.log("created");
-        }else{
+        } else {
             return console.log(err);
         }
     });
     return res.send(userGeo);
 
-
-
-    logger.log('info', 'addUserGeolocation called!');
-    userGeolocation.create(req.body, function (err, resp) {
-        if (err) console.log('Error saving addUserGeolocation');
-        res.json(resp);
-    });
-
 }
 
 exports.addSampleOne = function (req, res) {
+    var locToAdd = new loc({
+        name: req.body.place,
+        location: {coordinates: [req.body.longitude, req.body.latitude]}
+    });
     var sample = new sampleOne({
-        place : req.body.place,
+        place: req.body.place,
         placeOther: req.body.placeOther,
         doing: req.body.doing,
         isWorkingWithSomeone: req.body.isWorkingWithSomeone,
@@ -83,29 +79,29 @@ exports.addSampleOne = function (req, res) {
         feeling: req.body.feeling,
         feelingPositive: req.body.feelingPositive,
         feelingNegative: req.body.feelingNegative,
-        date: req.body.date,
-        longitude: req.body.longitude,
-        latitude: req.body.latitude,
+        loc: locToAdd,
         userEmail: req.body.userEmail
     });
     logger.log('info', 'addSampleOne called!');
-    sample.save(function (err){
-        if(!err){
+    sample.save(function (err) {
+        if (!err) {
             return console.log("created");
-        }else{
+        } else {
             return console.log(err);
         }
     });
     return res.send(sample);
 
 
-
 }
 
 exports.addSampleTwo = function (req, res) {
-
+    var locToAdd = new loc({
+        name: req.body.place,
+        location: {coordinates: [req.body.longitude, req.body.latitude]}
+    });
     var sample = new sampleTwo({
-        didLookForInformation : req.body.didLookForInformation,
+        didLookForInformation: req.body.didLookForInformation,
         informationSearched: req.body.informationSearched,
         findWhatNeeded: req.body.findWhatNeeded,
         placeFoundInformation: req.body.placeFoundInformation,
@@ -113,41 +109,40 @@ exports.addSampleTwo = function (req, res) {
         isWorkingWithSomeoneOther: req.body.isWorkingWithSomeoneOther,
         communicationToolUsed: req.body.communicationToolUsed,
         communicationToolUsedOther: req.body.communicationToolUsedOther,
-        date: req.body.date,
-        longitude: req.body.longitude,
-        latitude: req.body.latitude,
+        loc: locToAdd,
         userEmail: req.body.userEmail
     });
     logger.log('info', 'addSampleTwo called!');
-    sample.save(function (err){
-        if(!err){
+    sample.save(function (err) {
+        if (!err) {
             return console.log("created");
-        }else{
+        } else {
             return console.log(err);
         }
     });
     return res.send(sample);
-    
+
 }
 
 exports.addSampleThree = function (req, res) {
-
+    var locToAdd = new loc({
+        name: req.body.place,
+        location: {coordinates: [req.body.longitude, req.body.latitude]}
+    });
     var sample = new sampleThree({
-        sharedInformation : req.body.sharedInformation,
+        sharedInformation: req.body.sharedInformation,
         whoWithSharedInformation: req.body.whoWithSharedInformation,
         informationPersonNeeded: req.body.informationPersonNeeded,
         communicationToolUsed: req.body.communicationToolUsed,
         communicationToolUsedOther: req.body.communicationToolUsedOther,
-        date: req.body.date,
-        longitude: req.body.longitude,
-        latitude: req.body.latitude,
+        loc: locToAdd,
         userEmail: req.body.userEmail
     });
     logger.log('info', 'addSampleThree called!');
-    sample.save(function (err){
-        if(!err){
+    sample.save(function (err) {
+        if (!err) {
             return console.log("created");
-        }else{
+        } else {
             return console.log(err);
         }
     });
@@ -157,7 +152,7 @@ exports.addSampleThree = function (req, res) {
 
 
 exports.addUser = function (req, res) {
-    
+
     logger.log('info', 'addUser findOne called!');
     user.findOne({email: req.body.email}, function (err, result) {
         if (err) {
@@ -168,29 +163,51 @@ exports.addUser = function (req, res) {
 
 
             var userToSave = new user({
-                name : req.body.name,
+                name: req.body.name,
                 email: req.body.email,
                 date: req.body.date
             });
             logger.log('info', 'addUser called!');
-            userToSave.save(function (err){
-                if(!err){
+            userToSave.save(function (err) {
+                if (!err) {
                     return console.log("created");
-                }else{
+                } else {
                     return console.log(err);
                 }
             });
             return res.send(userToSave);
-        }else{
+        } else {
             return res.send();
         }
     });
 }
 
 
-exports.test = function (req, res) {
-    console.log(req.body);
+exports.getProblemsNearOneKm = function (req, res) {
+    console.log(req);
+    problem.aggregate(
+        [
+            {
+                "$geoNear": {
+                    "near": {
+                        "type": "Point",
+                        "coordinates": [ req.body.longitude , req.body.latitude]
+                    },
+                    "distanceField": "distance",
+                    "sperical":  true,
+                    "maxDistance":  10000
+                }
+            }
+        ],
+        function (err, results) {
+            if (err) {
+                console.log(err);
+                throw err;
+            }
+            res.send(results);
+        }
 
+    )
 
 }
 
