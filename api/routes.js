@@ -185,11 +185,13 @@ exports.addUser = function (req, res) {
 
 exports.getProblemsNearOneKm = function (req, res) {
     console.log(req.query);
+    console.log(parseFloat(req.query.longitude));
+    console.log(parseFloat(req.query.latitude));
     problem.aggregate(
         [
             {
                 $geoNear: {
-                    near: { type: "Point", coordinates: [req.query.longitude , req.query.latitude] },
+                    near: { type: "Point", coordinates: [parseFloat(req.query.longitude) , parseFloat(req.query.latitude)] },
                     distanceField: "dist.calculated",
                     maxDistance: 2,
                     query: { type: "public" },
