@@ -190,14 +190,14 @@ exports.getProblemsNearOneKm = function (req, res) {
     problem.aggregate(
         [
             {
-                "$geoNear": {
-                    "near": {
-                        "type": "Point",
-                        "coordinates": [ parseFloat(req.query.longitude) , parseFloat(req.query.latitude)]
+                $geoNear: {
+                    near: {
+                        type: "Point",
+                        coordinates: [ parseFloat(req.query.longitude) , parseFloat(req.query.latitude)]
                     },
-                    "distanceField": "distance",
-                    "spherical":  true,
-                    "maxDistance":  10000
+                    distanceField: "distance",
+                    spherical:  true,
+                    maxDistance:  1000
                 }
             }
         ],
