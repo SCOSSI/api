@@ -185,7 +185,7 @@ exports.addUser = function (req, res) {
 
 exports.getProblemsNearOneKm = function (req, res) {
     console.log(req.query);
-    problem.aggregate(
+    /*problem.aggregate(
         [
             {
                 "$geoNear": {
@@ -207,7 +207,18 @@ exports.getProblemsNearOneKm = function (req, res) {
             res.send(results);
         }
 
-    )
+    )*/
+    query.location = {
+        $near : {
+            $geometry : {
+                type : "Point",
+                coordinates : [ req.query.longitude, req.query.latitude]
+            },
+            $maxDistance : 1000
+        }
+    }
+
+    Location.find(query);
 
 }
 
