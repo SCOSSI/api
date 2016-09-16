@@ -3,7 +3,7 @@
  */
 //require mongoose module
 var mongoose = require('mongoose');
-var loc = require('./location.model');
+var loc = require('./location.model').schema;
 
 //instantiate mongoose schema
 var Schema = mongoose.Schema;
