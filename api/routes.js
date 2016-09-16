@@ -194,7 +194,7 @@ exports.getProblemsNearOneKm = function (req, res) {
                         "coordinates": [ req.query.longitude , req.query.latitude]
                     },
                     "distanceField": "distance",
-                    "sperical":  true,
+                    "spherical":  true,
                     "maxDistance":  10000
                 }
             }
