@@ -8,7 +8,7 @@ var sampleOne = require('./model/sampleOne.model');
 var sampleTwo = require('./model/sampleTwo.model');
 var sampleThree = require('./model/sampleThree.model');
 var problem = require('./model/problem.model');
-var loc = require('./model/userGeolocation.model');
+var loc = require('./model/location.model');
 var logger = require(__dirname + '/../utils/logger');
 
 

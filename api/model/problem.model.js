@@ -3,7 +3,7 @@
  */
 //require mongoose module
 var mongoose = require('mongoose');
-var loc = require('userGeolocation.model');
+var loc = require('./location.model');
 
 //instantiate mongoose schema
 var Schema = mongoose.Schema;
@@ -16,7 +16,7 @@ var problemSchema = new Schema({
     "problemOther" : String,
     "detail" : String,
     "date":{ type: Date, default: Date.now },
-    "loc": loc,
+    "loc": [loc],
     "userEmail":String
 });
 //export schema
