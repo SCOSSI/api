@@ -29,7 +29,8 @@ exports.addProblem = function (req, res) {
         problemOther: req.body.problemOther,
         detail: req.body.detail,
         loc: locToAdd,
-        userEmail: req.body.userEmail
+        userEmail: req.body.userEmail,
+        solution: req.body.solution
     });
     logger.log('info', 'addProblem called!');
     problemToSave.save(function (err) {
