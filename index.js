@@ -6,8 +6,12 @@ var http = require('http');
 var path = require('path');
 var bodyParser = require('body-parser');
 
+
+
 //instantiate express application
 var app = express();
+
+
 //set api directory
 app.set('api', path.join(__dirname, '/app/api'));
 
@@ -56,6 +60,7 @@ router.get('/api/getProblemsNearOneKm', routes.getProblemsNearOneKm);
 
 
 app.use('/', router);
+var jobs = require('./api/jobs');
 
 //create server & listen on port 3000
 var server = http.createServer(app).listen(app.get('port'), function(){

@@ -12,6 +12,7 @@ var loc = require('./model/location.model');
 var logger = require(__dirname + '/../utils/logger');
 
 
+
 exports.welcomeAPI = function (req, res) {
     logger.log('info', 'Recipe API called!');
     res.json({message: 'Welcome to Recipe API!'});
