@@ -4,11 +4,32 @@
 //Create Jobs
 var CronJob = require('cron').CronJob;
 var notifications = require('./pushNotifications');
-var job = new CronJob('30 45 20 * * 1-5', function() {
-        notifications.sendSampleThreeNotification();
-        console.log("call sample");
+
+var sampleOneJob = new CronJob('00 01 22 * * 1-5', function() {
+        notifications.sendSampleOneNotification();
+
     }, function () {
-        /* This function is executed when the job stops */
+        console.log("Sample Three could't be send.")
+    },
+    true, /* Start the job right now */
+    'America/Sao_Paulo' /* Time zone of this job. */
+);
+
+var sampleTwoJob = new CronJob('00 02 22 * * 1-5', function() {
+        notifications.sendSampleTwoNotification();
+
+    }, function () {
+        console.log("Sample Three could't be send.")
+    },
+    true, /* Start the job right now */
+    'America/Sao_Paulo' /* Time zone of this job. */
+);
+
+var sampleThreeoJob = new CronJob('00 03 22 * * 1-5', function() {
+        notifications.sendSampleThreeNotification();
+
+    }, function () {
+        console.log("Sample Three could't be send.")
     },
     true, /* Start the job right now */
     'America/Sao_Paulo' /* Time zone of this job. */
