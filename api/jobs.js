@@ -5,7 +5,7 @@
 var CronJob = require('cron').CronJob;
 var notifications = require('./pushNotifications');
 
-var sampleOneJob = new CronJob('00 01 22 * * 1-5', function() {
+var sampleOneJob = new CronJob('00 30 20 * * 1-7', function() {
         notifications.sendSampleOneNotification();
 
     }, function () {
@@ -15,7 +15,7 @@ var sampleOneJob = new CronJob('00 01 22 * * 1-5', function() {
     'America/Sao_Paulo' /* Time zone of this job. */
 );
 
-var sampleTwoJob = new CronJob('00 02 22 * * 1-5', function() {
+var sampleTwoJob = new CronJob('00 40 20 * * 1-7', function() {
         notifications.sendSampleTwoNotification();
 
     }, function () {
@@ -25,7 +25,7 @@ var sampleTwoJob = new CronJob('00 02 22 * * 1-5', function() {
     'America/Sao_Paulo' /* Time zone of this job. */
 );
 
-var sampleThreeoJob = new CronJob('00 03 22 * * 1-5', function() {
+var sampleThreeoJob = new CronJob('00 50 20 * * 1-7', function() {
         notifications.sendSampleThreeNotification();
 
     }, function () {
