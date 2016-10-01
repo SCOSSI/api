@@ -25,7 +25,7 @@ var sampleTwoJob = new CronJob('00 29 12 * * 1-7', function() {
     'America/Sao_Paulo' /* Time zone of this job. */
 );
 
-var sampleThreeoJob = new CronJob('00 19 13 * * 1-7', function() {
+var sampleThreeoJob = new CronJob('00 21 13 * * 1-7', function() {
         notifications.sendSampleThreeNotification();
 
     }, function () {
