@@ -6,7 +6,7 @@ var CronJob = require('cron').CronJob;
 var notifications = require('./pushNotifications');
 
 var sampleOneJob = new CronJob('00 28 12 * * 1-7', function() {
-        notifications.sendSampleOneNotification();
+        //notifications.sendSampleOneNotification();
 
     }, function () {
         console.log("Sample Three could't be send.")
@@ -16,7 +16,7 @@ var sampleOneJob = new CronJob('00 28 12 * * 1-7', function() {
 );
 
 var sampleTwoJob = new CronJob('00 29 12 * * 1-7', function() {
-        notifications.sendSampleTwoNotification();
+        //notifications.sendSampleTwoNotification();
 
     }, function () {
         console.log("Sample Three could't be send.")
@@ -26,7 +26,7 @@ var sampleTwoJob = new CronJob('00 29 12 * * 1-7', function() {
 );
 
 var sampleThreeoJob = new CronJob('00 21 13 * * 1-7', function() {
-        notifications.sendSampleThreeNotification();
+        //notifications.sendSampleThreeNotification();
 
     }, function () {
         console.log("Sample Three could't be send.")
